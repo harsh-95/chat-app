@@ -19,7 +19,9 @@ const Chat = ({location}) =>{
         setRoom(room);
         console.log(socket);
 
-        socket.emit('join', {name, room});
+        socket.emit('join', {name, room}, ({error})=>{
+            alert(error);
+        });
 
     }, [ENDPOINT, location.search])
 

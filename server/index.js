@@ -16,8 +16,14 @@ const io = socketio(server);
 io.on('connection',(socket)=>{
     console.log('socket connected');
 
-    socket.on('join', ({name, room})=>{
+    socket.on('join', ({name, room}, callback)=>{
         console.log(name, room);
+
+        let error = true;
+
+        if(error){
+            callback({error: 'error'});
+        }
     });
 
     socket.on('disconnet', ()=>{
