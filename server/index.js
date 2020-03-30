@@ -15,6 +15,11 @@ const io = socketio(server);
 
 io.on('connection',(socket)=>{
     console.log('socket connected');
+
+    socket.on('join', ({name, room})=>{
+        console.log(name, room);
+    });
+
     socket.on('disconnet', ()=>{
         console.log('User left the server');
     });
