@@ -2,8 +2,8 @@ const users = [];
 
 const addUser = ({id, name, room}) =>{
 
-    const name = name.trim().toLowerCase();
-    const room  = room.trim().toLowerCase();
+    name = name.trim().toLowerCase();
+    room  = room.trim().toLowerCase();
 
     const existingUser = users.find((user)=> user.name === user.name && user.room === room);
 
@@ -13,6 +13,7 @@ const addUser = ({id, name, room}) =>{
 
     const user = {id, name, room};
     users.push(user);
+    return {user}
 }
 
 const removeUser = (id) =>{
@@ -27,13 +28,13 @@ const removeUser = (id) =>{
 
 const getUser = (id) =>{
 
-    return users.find((user) => user.id === id);
+    return (users.find((user) => user.id === id));
 
 }
 
 const getUsersInRoom = (room) =>{
 
-    return users.filter((user) => user.room === room);
+    return (users.filter((user) => user.room === room));
 
 }
 
