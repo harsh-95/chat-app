@@ -36,11 +36,11 @@ const Chat = ({location}) =>{
 
     }, [ENDPOINT, location.search]);
 
-    useEffect(()=>{
-        socket.on('message', (message)=>{
-            setMessages([...messages, message]);
-        })
-    }, [messages]);
+    useEffect(() => {
+        socket.on('message', message => {
+          setMessages(messages => [ ...messages, message ]);
+        });
+    }, []);
 
     const sendMessage = (event) => {
         event.preventDefault();
