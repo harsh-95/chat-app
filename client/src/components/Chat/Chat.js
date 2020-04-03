@@ -26,7 +26,10 @@ const Chat = ({location}) =>{
         console.log(socket);
 
         socket.emit('join', {name, room}, (error)=>{
-            console.log(error);
+            if(error){
+                alert(error);
+                window.location = '/';
+            }
         });
 
         return () =>{

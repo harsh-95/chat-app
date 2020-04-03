@@ -1,12 +1,12 @@
 .form {
     display: flex;
-    border-top: 2px solid #D3D3D3;
+    border-top: 1px solid #D3D3D3;
   }
   
   .input {
     border: none;
     border-radius: 0;
-    padding: 5%;
+    padding: 3% 5%;
     width: 80%;
     font-size: 1.2em;
   }
@@ -23,5 +23,5 @@
     padding: 20px;
     display: inline-block;
     border: none;
-    width: 20%;
+    width: 21%;
   }
