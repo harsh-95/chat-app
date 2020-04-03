@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const socketio = require('socket.io');
 const routes = require('./router');
+const cors = require('cors');
 const {addUser, removeUser, getUser, getUsersInRoom} = require('./users');
 
 const app = express();
@@ -51,5 +52,7 @@ io.on('connection',(socket)=>{
 });
 
 app.use(routes);
+
+app.use(cors());
 
 server.listen(PORT, ()=>{console.log('server is running')});
